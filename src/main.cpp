@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "grid.h"
+#include "blocks.cpp"
 
 int main() {
 
@@ -13,12 +14,16 @@ int main() {
     Grid grid = Grid();
     grid.Print();
 
+    LBlock block = LBlock();
+    TBlock tBlock = TBlock();
+
     InitWindow(300, 600, "Raylib Tetris"); 
     SetTargetFPS(60);
     while(WindowShouldClose() == false){
         BeginDrawing();
         ClearBackground(darkBlue);
         grid.Draw();
+        block.Draw();
         EndDrawing();
     } 
 
