@@ -1,9 +1,8 @@
 #include <raylib.h>
 #include "grid.h"
-#include "blocks.cpp"
+#include "game.h"
 
 int main() {
-
     // Defining colors 
     Color darkBlue = {44, 44, 127, 255};
 
@@ -11,21 +10,18 @@ int main() {
     // 1. Event handling 
     // 2. Updating positions
     // 3. Drawing objects
+    Game game = Game();
     Grid grid = Grid();
     grid.Print();
-
-    LBlock block = LBlock();
-    TBlock tBlock = TBlock();
 
     InitWindow(300, 600, "Raylib Tetris"); 
     SetTargetFPS(60);
     while(WindowShouldClose() == false){
+        game.HandleInput();
         BeginDrawing();
         ClearBackground(darkBlue);
-        grid.Draw();
-        block.Draw();
+        game.Draw();
         EndDrawing();
-    } 
-
+    }
     CloseWindow();
 }
