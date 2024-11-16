@@ -15,9 +15,11 @@ class Game {
         void Draw();
 
     private:
+        bool BlockFits();
         bool IsBlockOutside();
         vector<Block> blocks;
         Block currBlock;
         Block nextBlock;
         void RotateBlock();
+        void LockBlock();
 };
