@@ -1,7 +1,8 @@
 #include <raylib.h>
 #include "grid.h"
 #include "game.h"
-
+#include "colors.h"
+#include <iostream>
 double lastUpdateTime = 0;
 
 bool EventTriggered(double interval){
@@ -17,7 +18,6 @@ bool EventTriggered(double interval){
 int main() {
     // Defining colors 
     Color darkBlue = {44, 44, 127, 255};
-    LBlock lBlock = LBlock();
     // Game loop 
     // 1. Event handling 
     // 2. Updating positions
@@ -26,7 +26,8 @@ int main() {
     Grid grid = Grid();
     grid.Print();
 
-    InitWindow(300, 600, "Raylib Tetris"); 
+    InitWindow(500, 620, "Raylib Tetris"); 
+    Font font = LoadFontEx("/fonts/monogram.ttf'", 64, 0, 0);
     SetTargetFPS(60);
     while(WindowShouldClose() == false){
         game.HandleInput();
@@ -35,7 +36,17 @@ int main() {
         }
         BeginDrawing();
         ClearBackground(darkBlue);
-        lBlock.Draw();
+        DrawTextEx(font, "Score", {350, 15}, 38, 2, WHITE);
+        DrawTextEx(font, "Next", {360, 175}, 38, 2, WHITE);
+        if(game.gameOver){
+            DrawTextEx(font, "GAME OVER", {320, 450}, 28, 2, WHITE);
+        }
+        DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lightBlue);
+        char scoreText[10];
+        snprintf(scoreText, sizeof(game.score), "%d", game.score);
+        Vector2 textSize = MeasureTextEx(font, scoreText, 38, 2);
+        DrawTextEx(font, scoreText, {320 + (170 - textSize.x) / 2, 65}, 38, 2, WHITE);
+        DrawRectangleRounded({320, 215, 170, 180}, 0.3, 6, lightBlue);
         game.Draw();
         EndDrawing();
     }

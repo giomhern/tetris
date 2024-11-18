@@ -13,6 +13,8 @@ class Game {
         void MoveBlockRight();
         void MoveBlockDown();
         void Draw();
+        bool gameOver;
+        int score;
 
     private:
         bool BlockFits();
@@ -22,4 +24,6 @@ class Game {
         Block nextBlock;
         void RotateBlock();
         void LockBlock();
+        void Reset();
+        void UpdateScore(int linesCleared, int MoveDownPoints);
 };
