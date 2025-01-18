@@ -10,17 +10,17 @@ project
 │   README.md
 │   .gitignore
 │   Makefile
-└───src
+└─── src
 │   │   main.cpp
-│   └───blocks
+│   └─── blocks
 │   │
-│   └───design
+│   └─── design
 │   │
-│   └───game 
+│   └─── game 
 │   │
-│   └───grid
+│   └─── grid
 │   │
-│   └───position       
+└─── position       
 ```
 
 # Email 
