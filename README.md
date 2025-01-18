@@ -1,8 +1,27 @@
-## A C++ Implementation of Tetris
+# Tetris: A C++ Approach
 
-### How to run 
+This was a small little project to put my C++ skills to the test. It was built with rather simple, but efficient data structures. 
+So, if you ever wanted to run a pure C++ implementation of Tetris, here you go. I plan on adding more features that might be niche, 
+but do not know yet.
 
-1. Clone the repository: `git clone REMOTE_URL`
-2. Open the code in VSCode. It will prompt you to activate the workspace. Accept. 
-3. You are all setup. Click on the `main.cpp` file and click the `F5` on your keyboard. 
+## File Structure
+```
+project
+│   README.md
+│   .gitignore
+│   Makefile
+└───src
+│   └───blocks
+│   │
+│   └───design
+│   │
+│   └───game 
+│   │
+│   └───grid
+│   │
+│   └───position
+│   main.cpp         
+```
 
+# Email 
+Feel free to email me at giovannimhern@uchicago. I can't reply to every message, but I do read them all.
