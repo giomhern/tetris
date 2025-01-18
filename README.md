@@ -11,6 +11,7 @@ project
 │   .gitignore
 │   Makefile
 └───src
+│   │   main.cpp
 │   └───blocks
 │   │
 │   └───design
@@ -19,8 +20,7 @@ project
 │   │
 │   └───grid
 │   │
-│   └───position
-│   main.cpp         
+│   └───position       
 ```
 
 # Email 
